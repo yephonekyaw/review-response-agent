@@ -13,8 +13,8 @@ tags:
 - ollama
 pipeline_tag: text-generation
 base_model:
-- google/gemini-2.5-flash
-- google/text-embedding-004
+- google/gemini-3.1-flash-lite
+- google/gemini-embedding-001
 library_name: custom
 ---
 
@@ -40,7 +40,7 @@ LLM layer.
   draft and checks it against the manuscript. Missing pointers are
   merged into the Critic's verdict and trigger the same refine loop —
   no new control flow.
-- **RAG over the manuscript** — character chunking + `text-embedding-004`
+- **RAG over the manuscript** — character chunking + `gemini-embedding-001`
   embeddings + in-memory numpy cosine retrieval. The Draft / Critique
   prompts only ever see the top-k chunks relevant to a comment.
 - **Provider-agnostic LLM layer** — `GeminiProvider` (default, free
@@ -65,15 +65,15 @@ grouped by reviewer, with every comment quoted and answered in a
 consistent professional voice and grounded in the manuscript's actual
 content.
 
-The agent is built on top of `gemini-2.5-flash` for chat and
-`text-embedding-004` for embeddings (both free tier). It can also be
+The agent is built on top of `gemini-3.1-flash-lite` for chat and
+`gemini-embedding-001` for embeddings (both free tier). It can also be
 pointed at a local Ollama server for offline operation.
 
 - **Developed by:** Ye Phone Kyaw — CSC532/691, SIT
 - **Agent type:** Multi-agent RAG pipeline
 - **Languages:** English (prompts and outputs)
 - **License:** MIT
-- **Foundation models:** `gemini-2.5-flash`, `text-embedding-004`
+- **Foundation models:** `gemini-3.1-flash-lite`, `gemini-embedding-001`
   (default); any Ollama chat + embedding model (alternative)
 
 ### Architecture

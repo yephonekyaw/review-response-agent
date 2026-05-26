@@ -96,7 +96,7 @@ flowchart LR
     RT --> IF
     IF -->|LLM_PROVIDER=gemini| G
     IF -->|LLM_PROVIDER=ollama| O
-    G --> GA[Gemini API<br/>2.5-flash<br/>text-embedding-004]
+    G --> GA[Gemini API<br/>2.5-flash<br/>gemini-embedding-001]
     O --> OL[Ollama server<br/>llama3.1:8b<br/>nomic-embed-text]
 
     classDef api fill:#e1f5fe,stroke:#0277bd,color:#000

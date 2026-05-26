@@ -1,4 +1,5 @@
 """Environment-driven configuration."""
+
 from __future__ import annotations
 
 import os
@@ -11,7 +12,7 @@ load_dotenv()
 
 @dataclass(frozen=True)
 class Config:
-    provider: str            # "gemini" or "ollama"
+    provider: str  # "gemini" or "ollama"
     gemini_api_key: str | None
     gemini_chat_model: str
     gemini_embed_model: str
@@ -30,8 +31,8 @@ def load_config() -> Config:
     cfg = Config(
         provider=provider,
         gemini_api_key=os.environ.get("GEMINI_API_KEY"),
-        gemini_chat_model=os.environ.get("GEMINI_CHAT_MODEL", "gemini-2.5-flash"),
-        gemini_embed_model=os.environ.get("GEMINI_EMBED_MODEL", "text-embedding-004"),
+        gemini_chat_model=os.environ.get("GEMINI_CHAT_MODEL", "gemini-3.1-flash-lite"),
+        gemini_embed_model=os.environ.get("GEMINI_EMBED_MODEL", "gemini-embedding-001"),
         gemini_min_interval=float(os.environ.get("GEMINI_MIN_INTERVAL", "6.5")),
         gemini_max_retries=int(os.environ.get("GEMINI_MAX_RETRIES", "5")),
         ollama_host=os.environ.get("OLLAMA_HOST", "http://localhost:11434"),

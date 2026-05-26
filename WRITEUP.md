@@ -4,7 +4,7 @@
 
 > **Free-resource declaration.** This project uses only free AI/cloud
 > resources available to all SIT students: the free tier of the Google
-> Gemini API (`gemini-2.5-flash` for chat, `text-embedding-004` for
+> Gemini API (`gemini-3.1-flash-lite` for chat, `gemini-embedding-001` for
 > embeddings). A local Ollama backend is supported as a drop-in fallback
 > when the free quota is exhausted — also free, running on the author's
 > home server. No paid services were used.
@@ -70,7 +70,7 @@ every prompt. We do something a little more honest:
 
 1. **Chunk** the manuscript with a character window (1800 chars / 200
    overlap).
-2. **Embed** each chunk with `text-embedding-004` (768-dim).
+2. **Embed** each chunk with `gemini-embedding-001` (768-dim).
 3. **Index** in-memory: an L2-normalized numpy matrix.
 4. For each comment, embed the comment and retrieve the top-k chunks by
    cosine similarity. Pass only those chunks into DRAFT / CRITIQUE.
