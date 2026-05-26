@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 .env
-outputs/*.md
+outputs/
 data/
 .ipynb_checkpoints/
 uv.lock
