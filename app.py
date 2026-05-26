@@ -213,4 +213,4 @@ def build_ui() -> gr.Blocks:
 
 
 if __name__ == "__main__":
-    build_ui().launch()
+    build_ui().launch(share=True)
